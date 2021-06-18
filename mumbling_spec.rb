@@ -1,7 +1,13 @@
+def mumble(letters, position)
+    return letters[position].upcase + letters[position].downcase*position
+end
+
 def mumble_letters(letters)
-    return letters[0].upcase + "-" + letters[1].upcase + letters[1].downcase + "-" + letters[2].upcase + letters[2].downcase*2 if letters.length == 3
-    return letters[0].upcase + "-" + letters[1].upcase + letters[1].downcase if letters.length == 2
-    letters.upcase 
+    return mumble(letters,0) + "-" + mumble(letters,1) + "-" + mumble(letters,2) + "-" + mumble(letters,3) if letters.length == 4
+    return mumble(letters,0) + "-" + mumble(letters,1) + "-" + mumble(letters,2) if letters.length == 3
+    return mumble(letters,0) + "-" + mumble(letters,1) if letters.length == 2
+    return mumble(letters,0) if letters.length == 1
+    ""
 end
 
 describe "Mumble letters" do

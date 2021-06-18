@@ -83,4 +83,11 @@ describe "Mumble letters" do
 
         expect(result).to(eq("A-Bb-Ccc-Dddd"))
     end
+
+    it "returns A-Bb-Ccc-Dddd-Eeeee when given abcde" do
+        result = mumble_letters("abcde")
+
+        expect(result).to(eq("A-Bb-Ccc-Dddd-Eeeee"))
+    end
+
 end

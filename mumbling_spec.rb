@@ -1,5 +1,6 @@
 def mumble_letters(letters)
     return "A" if letters == "a"
+    return "B" if letters == "b"
     ""
 end
 
@@ -21,5 +22,11 @@ describe "Mumble letters" do
         result = mumble_letters("b")
 
         expect(result).to(eq("B"))
+    end
+    
+    it "returns uppercase C when given c" do
+        result = mumble_letters("c")
+
+        expect(result).to(eq("C"))
     end
 end

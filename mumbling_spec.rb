@@ -1,20 +1,11 @@
-def mumble(letters, position)
-    return letters[position].upcase + letters[position].downcase*position
-end
-
 def mumble_letters(letters)
     return "" if letters.empty?
-    
-    last_position = letters.length() - 1
-    mumbledore = ""
 
-    for position in 0..last_position do
-        mumbledore += mumble(letters,position)
-        mumbledore += "-" unless position == last_position
-    end
-
-    return mumbledore
-    
+    letters
+        .split("")
+        .each_with_index
+        .map { |letter, position| (letter * (position + 1)).capitalize }
+        .join("-")
 end
 
 describe "Mumble letters" do
@@ -36,7 +27,7 @@ describe "Mumble letters" do
 
         expect(result).to(eq("B"))
     end
-    
+
     it "returns uppercase C when given c" do
         result = mumble_letters("c")
 

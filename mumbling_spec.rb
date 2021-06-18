@@ -1,5 +1,5 @@
 def mumble_letters(letters)
-    return letters[0].upcase + "-" + letters[0].upcase + letters[0] if letters.length == 2
+    return letters[0].upcase + "-" + letters[1].upcase + letters[1].downcase if letters.length == 2
     letters.upcase 
 end
 
@@ -41,21 +41,33 @@ describe "Mumble letters" do
         expect(result).to(eq("A-Aa"))
     end
 
-    it "return B-Bb when given bb" do
+    it "returns B-Bb when given bb" do
         result = mumble_letters("bb")
 
         expect(result).to(eq("B-Bb"))
     end
 
-    it "return C-Cc when given cc" do
+    it "returns C-Cc when given cc" do
         result = mumble_letters("cc")
 
         expect(result).to(eq("C-Cc"))
     end
 
-    it "return A-Bb when given ab" do
+    it "returns A-Bb when given ab" do
         result = mumble_letters("ab")
 
         expect(result).to(eq("A-Bb"))
+    end
+
+    it "returns A-Bb when given aB" do
+        result = mumble_letters("aB")
+
+        expect(result).to(eq("A-Bb"))
+    end
+
+    it "returns A-Bb-Ccc when given abc" do
+        result = mumble_letters("abc")
+
+        expect(result).to(eq("A-Bb-Ccc"))
     end
 end

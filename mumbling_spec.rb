@@ -48,9 +48,9 @@ describe "Mumble letters" do
         expect(result).to(eq("B-Bb"))
     end
 
-    it "return B-Bb when given bB" do
-        result = mumble_letters("bB")
+    it "return C-Cc when given cc" do
+        result = mumble_letters("cc")
 
-        expect(result).to(eq("B-Bb"))
+        expect(result).to(eq("C-Cc"))
     end
 end

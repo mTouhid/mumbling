@@ -1,3 +1,7 @@
+def mumble_letters(letters)
+    ""
+end
+
 describe "Mumble letters" do
 
     it "handles empty string" do

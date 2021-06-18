@@ -16,4 +16,10 @@ describe "Mumble letters" do
 
         expect(result).to(eq("A"))
     end
+
+    it "returns uppercase B when given b" do
+        result = mumble_letters("b")
+
+        expect(result).to(eq("B"))
+    end
 end

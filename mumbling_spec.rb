@@ -3,11 +3,18 @@ def mumble(letters, position)
 end
 
 def mumble_letters(letters)
-    return mumble(letters,0) + "-" + mumble(letters,1) + "-" + mumble(letters,2) + "-" + mumble(letters,3) if letters.length == 4
-    return mumble(letters,0) + "-" + mumble(letters,1) + "-" + mumble(letters,2) if letters.length == 3
-    return mumble(letters,0) + "-" + mumble(letters,1) if letters.length == 2
-    return mumble(letters,0) if letters.length == 1
-    ""
+    return "" if letters.empty?
+    
+    last_position = letters.length() - 1
+    mumbledore = ""
+
+    for position in 0..last_position do
+        mumbledore += mumble(letters,position)
+        mumbledore += "-" unless position == last_position
+    end
+
+    return mumbledore
+    
 end
 
 describe "Mumble letters" do

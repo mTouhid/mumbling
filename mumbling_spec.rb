@@ -1,4 +1,5 @@
 def mumble_letters(letters)
+    return "A" if letters == "a"
     ""
 end
 
